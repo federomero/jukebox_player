@@ -12,16 +12,12 @@ class JukeboxPlayer
     self.uri = uri
   end
 
-  def play(song)
-    HTTParty.post("#{uri}/play", body: song.to_json)
+  def play(song, callback_url)
+    HTTParty.post("#{uri}/play?callback_url=#{callback_url}", body: song.to_json)
   end
 
   def volume=(volume)
     HTTParty.post("#{uri}/volume?volume=#{volume}")
-  end
-
-  def callback_url=(url)
-    HTTParty.post("#{uri}/callback?url=#{url}")
   end
 
   def state
