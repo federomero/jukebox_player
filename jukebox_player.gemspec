@@ -7,4 +7,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Federico Romero"]
   s.email       = 'federico.romero@neonroots.com'
   s.files       = ["lib/jukebox_player.rb"]
+
+  s.add_dependency("httparty")
+  s.add_dependency("json")
+
 end
